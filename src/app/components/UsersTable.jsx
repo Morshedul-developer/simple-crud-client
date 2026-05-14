@@ -9,12 +9,17 @@ const UsersTable = ({ users, deleteUserAction }) => {
   return (
     <Table>
       <Table.ScrollContainer>
-        <Table.Content aria-label="Team members" className="min-w-150">
+        <Table.Content
+          aria-label="Team members"
+          className="min-w-150 text-center"
+        >
           <Table.Header>
-            <Table.Column isRowHeader>Name</Table.Column>
-            <Table.Column>Role</Table.Column>
-            <Table.Column>Email</Table.Column>
-            <Table.Column>Status</Table.Column>
+            <Table.Column className="text-center" isRowHeader>
+              Name
+            </Table.Column>
+            <Table.Column className="text-center">Role</Table.Column>
+            <Table.Column className="text-center">Email</Table.Column>
+            <Table.Column className="text-center">Status</Table.Column>
           </Table.Header>
           <Table.Body>
             {users.map((user) => (
@@ -22,7 +27,7 @@ const UsersTable = ({ users, deleteUserAction }) => {
                 <Table.Cell>{user.name}</Table.Cell>
                 <Table.Cell>{user.role}</Table.Cell>
                 <Table.Cell>{user.email}</Table.Cell>
-                <Table.Cell>
+                <Table.Cell className="flex gap-2 justify-center">
                   <Link href={`/users/${user._id}`}>
                     <Button variant="outline">Outline</Button>
                   </Link>
